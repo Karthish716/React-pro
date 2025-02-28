@@ -1,19 +1,32 @@
+import pic from './assets/tower.jpg'
+import React from "react";
+const course1 = "HTML"
 
-const course1 = "html"
 
 // const styless = {
 //     backgroundColor : "green",
 // }
 
 
-function Course(){
+function Course(props){
     return (
         <div className="card">
-            <img src="" alt="" />
-            <h2>{course1}</h2>
-            <p>This is Code io's Html </p>
+            <img src={props.image} alt=""/>
+            <h2>{props.name}</h2>
+            <p>{props.price}</p>
+            <span>{props.rating}</span>
         </div>
     );
+}
+
+
+Course.defaultProps={
+
+    image:pic,
+    name:"Codes",
+    price:"$193",
+    rating:5,
+    
 }
 
 export default Course
