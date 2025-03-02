@@ -9,9 +9,10 @@ const course1 = "HTML"
 
 
 function Course(props){
-    if(props.show == true){
+
         return (
-            <div className="card">
+
+           props.name && <div className="card">
                 <img src={props.image} alt=""/>
                 <h2>{props.name}</h2>
                 <p>{props.price}</p>
@@ -19,20 +20,15 @@ function Course(props){
             </div>
         );
     
-    }
-    else{
-        return(
-            <div className="card">Course Not Availiable</div>
-        );
+
     }
 
-}
 
-Course.propTypes = {
-    name : PropTypes.string,
-    rating : PropTypes.number,
-    show : PropTypes.bool
-} 
+// Course.propTypes = {
+//     name : PropTypes.string,
+//     rating : PropTypes.number,
+//     show : PropTypes.bool
+// } 
 
 // Course.defaultProps={
 
