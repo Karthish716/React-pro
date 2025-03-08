@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const course1 = "HTML"
  
  
@@ -21,6 +21,11 @@ function Course(props){
         console.log(purchase)
  
     }
+
+    useEffect(()=>{
+        console.log('inside course use effect')
+        console.log(purchase);
+    })
  
     return (
         props.name && <div className="card">

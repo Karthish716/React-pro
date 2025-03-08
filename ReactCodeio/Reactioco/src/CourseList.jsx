@@ -2,7 +2,7 @@ import pic from './assets/tower.jpg'
 import day from './assets/dayla.jpg'
 import night from './assets/nightVag.jpg'
 import Course from './Course';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function CourseList(){
     const [Courses, setCourses]= useState([
         {
@@ -34,18 +34,28 @@ function CourseList(){
                     rating: 5,
                 }
     ]);
-
+ 
+    const [dummy, setDummy] = useState(true);
+ 
+ 
+    useEffect(()=>{
+        console.log('use effect called');
+        console.log(dummy);
+    },[]);
+ 
+ 
     function handleDelete(id){
         const newCourse = Courses.filter((course)=> course.id !=id)
         setCourses(newCourse);
 
     }
+ 
   // Courses.sort((x,y) => x.price-y.price)
-
+ 
   // const vfmCourse = Courses.filter((course)=> course.price<200)
-
+ 
     const coursesList = Courses.map( 
-
+ 
         (course) => 
         <Course key={course.id} name={course.name} 
         image={course.image} 
@@ -53,12 +63,13 @@ function CourseList(){
         rating={course.rating}
         delete={handleDelete} 
         id={course.id}/>)
-
+ 
     return(
         <>
         {coursesList}
+        <button onClick={()=> {setDummy(false)}}>Dummy Button</button>
         </>
     );
 }
-
+ 
 export default CourseList
