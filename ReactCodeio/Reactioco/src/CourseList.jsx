@@ -37,17 +37,26 @@ function CourseList(){
     // ]);
  
     const [dummy, setDummy] = useState(true);
+    const [error,setError] = useState(null);
  
  
     useEffect(()=>{
         // console.log('use effect called');
         // console.log(dummy);
 
-        fetch('http://localhost:3000/courses')
+        setTimeout(()=> { fetch('http://localhost:3000/coursess')
         .then(response => {
+            if(!response.ok){
+                throw Error("Couldn't retrive data");
+            }
             console.log(response);
             return response.json()
         }).then(data => setCourses(data))
+        .catch((error)=>{
+            console.log(error.message);
+            setError(error.message);
+        })
+    },1000)
     },[]);
  
  
@@ -62,7 +71,10 @@ function CourseList(){
   // const vfmCourse = Courses.filter((course)=> course.price<200)
 
   if(!Courses){
-    return <></>
+    return (<>
+    {!error && <p>Loding..</p>}
+    {error && <p>{error}</p>}
+    </>)
   }
  
     const coursesList = Courses.map( 
