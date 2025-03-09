@@ -1,0 +1,32 @@
+{
+    "courses" : [
+    {
+        "id" : 1,    
+    "name" :"HTML Full Course",
+    "price": 299,
+    "image": "http://localhost:3000/assets/tower.jpg",
+    "rating" :5
+    },
+    {
+        "id" : 2,
+        "name" :"Css Full Course",
+        "price": 199,
+        "image": "http://localhost:3000/assets/dayla.jpg",
+        "rating" :4
+        },
+        {
+            "id" : 3,
+            "name" :"JS Full Course",
+            "price": 199,
+            "image": "http://localhost:3000/assets/nightVag.jpg",
+            "rating" :5
+            },
+            {
+                "id" : 4,
+                "name":"React Full",
+                "price": 599,
+                "image": "http://localhost:3000/assets/dayla.jpg",
+                "rating": 5
+            }
+]
+}
