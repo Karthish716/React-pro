@@ -2,9 +2,10 @@
 // import day from './assets/dayla.jpg'
 // import night from './assets/nightVag.jpg'
 import Course from './Course';
-import { useEffect, useState } from 'react';
+import useFetch from './useFetch';
+
 function CourseList(){
-    const [Courses, setCourses]= useState(null);
+
     //     [
     //     {
     //         id : 1,    
@@ -35,31 +36,9 @@ function CourseList(){
     //                 rating: 5,
     //             }
     // ]);
+    const [Courses, dummy, error]= useFetch('http://localhost:3000/courses');
  
-    const [dummy, setDummy] = useState(true);
-    const [error,setError] = useState(null);
- 
- 
-    useEffect(()=>{
-        // console.log('use effect called');
-        // console.log(dummy);
 
-        setTimeout(()=> { fetch('http://localhost:3000/coursess')
-        .then(response => {
-            if(!response.ok){
-                throw Error("Couldn't retrive data");
-            }
-            console.log(response);
-            return response.json()
-        }).then(data => setCourses(data))
-        .catch((error)=>{
-            console.log(error.message);
-            setError(error.message);
-        })
-    },1000)
-    },[]);
- 
- 
     function handleDelete(id){
         const newCourse = Courses.filter((course)=> course.id !=id)
         setCourses(newCourse);
