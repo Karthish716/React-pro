@@ -5,6 +5,7 @@ import Home from './Home.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFound from './NotFount.jsx'
 import Counter from './Counter.jsx'
+import Post from './Post.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path:'/Counter',
     element: <Counter/>
+  },
+  {
+    path:'/post/:id',
+    element:<Post/>
   }
 ]);
 
