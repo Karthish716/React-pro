@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { dataConstext } from "./Home";
+import Counter from "./Counter";
 
 function Login (){
 
@@ -25,10 +27,12 @@ function Login (){
     function handlePasswordCheck(){
 
     }
-
+    const data = useContext(dataConstext);
 
     return(
         <>
+        <h2>{data}</h2>
+        <Counter />
         <form className="my-5" style={{width:"50%", margin:"auto"}}>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="form-label">Email address</label>

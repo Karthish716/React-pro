@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
+
+export const dataConstext = createContext();
+
 function Home (){
     const [posts, setPosts] = useState(null);
+    const data = "DataData";
 
     useEffect(()=>{
 
         const controller = new AbortController();
         const signal = controller.signal;
-        setTimeout(()=>{
+
         fetch('http://localhost:3001/posts',{signal})
         .then(response=>{
             return response.json()
@@ -18,7 +23,7 @@ function Home (){
         }).catch(err=>{
             console.log(err);
         });
-},5000);
+
 
 //cleanup function
 return ()=>{
@@ -32,6 +37,10 @@ return ()=>{
     return (
         <div className="container">
             <Link to='/login'>Login</Link>
+            <dataConstext.Provider value={data}>
+            <Login />
+            </dataConstext.Provider>
+           
         <div className="row justify-content-center m-3">
             {posts && posts.map(post=>{
                 return (
