@@ -1,0 +1,28 @@
+{
+    "posts":[
+        {
+            "id" : 101,
+            "title":"My first Post",
+            "content" : "Hello, this is my first post",
+            "created_at":"2025-01-01"
+        },
+        {
+            "id" : 102,
+            "title":"My Second Post",
+            "content" : "Hello, this is my Second post have a good day",
+            "created_at":"2025-01-05"
+        },
+        {
+            "id" : 103,
+            "title":"My Third Post",
+            "content" : "Hello, this is my Third post",
+            "created_at":"2025-01-20"
+        },
+        {
+            "id" : 104,
+            "title":"My Fourth Post",
+            "content" : "Hello, this is my Fourth post",
+            "created_at":"2025-02-06"
+        }
+    ]
+}

@@ -19,7 +19,9 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+
+    <RouterProvider router={router}/>
+
 )
+
+//npm install react-router-dom
